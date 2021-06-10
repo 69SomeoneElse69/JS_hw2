@@ -11,47 +11,188 @@
 
     <script>
         //1. Дан код:
-        var a = 1, b = 1, c, d;
-        c = ++a; alert(c);           // 2
-        d = b++; alert(d);           // 1
-        c = (2 + ++a); alert(c);      // 5
-        d = (2 + b++); alert(d);      // 4
-        alert(a);                    // 3
-        alert(b);                    // 3
+        //var a = 1, b = 1, c, d;
+        //c = ++a; alert(c);           // 2 - увеличивает значение на еденицу "с" = 2 и "a" = 2
+        //d = b++; alert(d);           // 1 - увеличивает значение на еденицу для присваевомой переменной "d" но в самой переменной "b" остается прежнее значение
+        //c = (2 + ++a); alert(c);      // 5 = (2 + 3)
+        //d = (2 + b++); alert(d);      // 4 = (2 + 2)
+        //alert(a);                    // 3
+        //alert(b);                    // 3
         //Почему код даёт именно такие результаты?
     </script>
 
     <script>
         //2. Чему будет равен x в примере ниже?
+        var a = 2;
+        var x = 1 + (a *= 2);
+        alert('x = ' + x); //x = 5
     </script>
 
     <script>
         //3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
         //если a и b положительные, вывести их разность;
         //если а и b отрицательные, вывести их произведение;
-        //если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.          
+        //если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом. 
+        var userNumberA = parseInt(prompt("Введите число A"));
+        var userNumberB = parseInt(prompt("Введите число B"));
+        var answer;
+        if (userNumberA >= 0 && userNumberB >= 0) {
+            answer = userNumberA - userNumberB;
+            alert('оба числа положительные и их разность равна:' + answer);
+        } else if (userNumberA < 0 && userNumberB < 0) {
+            answer = userNumberA * userNumberB;
+            alert('оба числа отрицательные и их произведение равно:' + answer);
+        } else {
+            answer = userNumberA + userNumberB;
+            alert('числа разных знаков и их сумма равна:' + answer);
+        }
     </script>
 
     <script>
         //4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+        var userNumber = parseInt(prompt("Введите число в промежутке [0..15]:"));
+        switch (userNumber) {
+            case 0:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 1:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 2:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 3:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 4:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 5:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 6:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 7:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 8:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 9:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 10:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 11:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 12:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 13:
+                document.writeln(userNumber);
+                userNumber++;
+
+            case 14:
+                document.writeln(userNumber);
+                userNumber++;
+
+            default:
+                document.writeln(userNumber);
+
+        }
     </script>
 
     <script>
         // 5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+        function addition(x, y) {
+            return x + y;
+        }
+        function subtraction(x, y) {
+            return x - y;
+        }
+        function multiplication(x, y) {
+            return x * y;
+        }
+        function division(x, y) {
+            return x / y;
+        }
     </script>
 
     <script>
         //6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), 
         //где arg1, arg2 – значения аргументов, operation – строка с названием операции. 
-        //В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch).   
+        //В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch).
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '+':
+                    return addition(arg1, arg2);
+                case '-':
+                    return subtraction(arg1, arg2);
+                case '*':
+                    return multiplication(arg1, arg2);
+                case '/':
+                    return division(arg1, arg2);
+                default:
+                    alert("Нет таких значений");
+            }
+        }
     </script>
 
     <script>
-        //7. *Сравнить null и 0. Попробуйте объяснить результат.   
+        //7. *Сравнить null и 0. Попробуйте объяснить результат.
+        if (null === 0) {
+            alert("null === 0 как число");
+        } else if (null == 0) {
+            alert("null == 0 как число");
+        } else {
+            alert("null != 0 как число");
+        }
+
+        if (null === "0") {
+            alert("null === 0 как строка");
+        } else if (null == "0") {
+            alert("null == 0 как строка");
+        } else {
+            alert("null != 0 как строка");
+        }
+
+        if (null > 0) {
+            alert("null === 0 как число");
+        } else if (null == 0) {
+            alert("null == 0 как число");
+        } else if (null >= 0) {
+            alert("null >= 0 как число");
+        }
+        //https://habr.com/ru/company/ruvds/blog/337732/
     </script>
 
     <script>
-        //8. *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.  
+        //8. *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень. 
+        function power(val, pow) {
+            if (pow == 1) {
+                return val;
+            } else {
+                return val * power(val, pow - 1);
+            }
+        }
+
+        alert("число " + userNumberA + " в степени " + userNumberB + " равняется: " + power(userNumberA, userNumberB)); // при отрицательном или нулевом значении степени функция не отрабатывается
     </script>
 
 </body>
